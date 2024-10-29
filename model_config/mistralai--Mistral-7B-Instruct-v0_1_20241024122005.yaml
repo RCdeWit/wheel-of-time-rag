@@ -1,0 +1,39 @@
+accelerator_type: A10G
+deployment_config:
+  autoscaling_config:
+    target_ongoing_requests: 32
+  max_ongoing_requests: 64
+engine_kwargs:
+  max_num_batched_tokens: 8192
+  max_num_seqs: 64
+  tokenizer_pool_extra_config:
+    runtime_env:
+      pip: null
+  tokenizer_pool_size: 2
+  trust_remote_code: true
+generation_config:
+  prompt_format:
+    assistant: '{instruction}</s> '
+    default_system_message: Always assist with care, respect, and truth. Respond with
+      utmost utility yet securely. Avoid harmful, unethical, prejudiced, or negative
+      content. Ensure replies promote fairness and positivity.
+    system: '{instruction} + '
+    system_in_user: true
+    trailing_assistant: ''
+    user: '[INST] {system}{instruction} [/INST]'
+  stopping_sequences: []
+  stopping_tokens: []
+input_modality: text
+json_mode:
+  enabled: false
+llm_engine: VLLMEngine
+lora_config: null
+max_request_context_length: 8192
+model_loading_config:
+  model_id: mistralai/Mistral-7B-Instruct-v0.1
+  model_source: mistralai/Mistral-7B-Instruct-v0.1
+runtime_env:
+  env_vars:
+    HUGGING_FACE_HUB_TOKEN: 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
+tensor_parallelism:
+  degree: 1
