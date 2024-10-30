@@ -32,8 +32,5 @@ max_request_context_length: 8192
 model_loading_config:
   model_id: mistralai/Mistral-7B-Instruct-v0.1
   model_source: mistralai/Mistral-7B-Instruct-v0.1
-runtime_env:
-  env_vars:
-    HUGGING_FACE_HUB_TOKEN: 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
 tensor_parallelism:
   degree: 1
